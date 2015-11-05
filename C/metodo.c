@@ -1,8 +1,5 @@
 #include <stdio.h>
-
-void printArray(int [], int );
-void swap(int*, int*);
-
+#include "metodo.h"
 int main(){
 	/* example vector:*/
 
