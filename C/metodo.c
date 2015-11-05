@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include "metodo.h"
-int main(){
+
+void metodo( int vec[], int n, float *tiempo){
 	/* example vector:*/
 
-	int length = 10;
-	
-	int a [] = {1,2,1,3,4,5,3,8,5,1};
-
+	int length = n;
+	int a [] = vec[];
 	int i,j;
-
 	int min;
 	int count;
 
+	clock_t begin, end;
+	double time_spent;
+
     count = 0;
     min = 0;
+    begin = clock();
 	/* advance the position through the entire array */
 	/*   (could do j < n-1 because single element is also min element) */
 	for (i = 0; i < length; i++) {
@@ -38,19 +40,12 @@ int main(){
 
 	}
 
-	printArray( a, length);
+	end = clock();
+	time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+	*tiempo = (float) time_spent;
 	return 0;
 }
 
-void printArray( arrayToPrint [] ,  length){
-
-	/* print array */
-
-	for (int i = 0; i < length; ++i){
-
-		printf("%d\n", arrayToPrint[i] );
-	}
-}
 
 void swap(int *a, int *b){
 	/* swap array elements by reference */
