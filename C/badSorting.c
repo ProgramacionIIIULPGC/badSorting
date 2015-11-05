@@ -12,26 +12,31 @@ int main(){
 
 	int i,j;
 
-	int iMin;
+	int min;
+	int count;
 
+    count = 0;
+    min = 0;
 	/* advance the position through the entire array */
 	/*   (could do j < n-1 because single element is also min element) */
-	for (j = 0; j < length-1; j++) {
+	for (i = 0; i < length; i++) {
 	    /* find the min element in the unsorted a[j .. n-1] */
 
 	    /* assume the min is the first element */
-	    iMin = j;
+	    count = min;
 	    /* test against elements after j to find the smallest */
-	    for ( i = j+1; i < length; i++) {
+	    for ( j = min; j < length; j++) {
 	        /* if this element is less, then it is the new minimum */
-	        if (a[i] < a[iMin]) {
+	        if (a[i] <= a[j]) {
 	            /* found new minimum; remember its index */
-	            iMin = i;
+	            count++;
 	        }
 	    }
 
-	    if(iMin != j) {
-	        swap(&a[j], &a[iMin]);
+	    if(count == length) {
+	        swap(&a[i], &a[min]);
+	        i=min;
+	        min++;
 	    }
 
 	}
