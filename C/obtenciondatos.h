@@ -1,1 +1,1 @@
-void obtencionDatos( int[], int , float[], float[]);
+void obtencionDatos( int vectorIterationTries[], int vectorIterationTriesLength, float timeDesc[], float timeRandom []);

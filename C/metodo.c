@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "metodo.h"
+#include <time.h>
 
 void metodo( int vec[], int n, float *tiempo){
 	/* example vector:*/
 
 	int length = n;
-	int a [] = vec[];
 	int i,j;
 	int min;
 	int count;
@@ -26,14 +26,14 @@ void metodo( int vec[], int n, float *tiempo){
 	    /* test against elements after j to find the smallest */
 	    for ( j = min; j < length; j++) {
 	        /* if this element is less, then it is the new minimum */
-	        if (a[i] <= a[j]) {
+	        if (vec[i] <= vec[j]) {
 	            /* found new minimum; remember its index */
 	            count++;
 	        }
 	    }
 
 	    if(count == length) {
-	        swap(&a[i], &a[min]);
+	        swap(&vec[i], &vec[min]);
 	        i=min;
 	        min++;
 	    }
@@ -43,7 +43,6 @@ void metodo( int vec[], int n, float *tiempo){
 	end = clock();
 	time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
 	*tiempo = (float) time_spent;
-	return 0;
 }
 
 
