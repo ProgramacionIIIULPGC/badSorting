@@ -1,4 +1,7 @@
 #C implementation of selection sort
 Course of Programacion III at ULPGC
 
-Use `gcc -o badSorting badSorting.c` to compile
+Use:
+	- `make` to compile
+	- './badSorting debug' to use a restricted set of array for testing purpose.
+
